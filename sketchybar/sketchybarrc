@@ -25,10 +25,9 @@ sketchybar --bar height=42        \
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
-sketchybar --default icon.font="Hack Nerd Font:Bold:17.0"  \
-                     icon.color=0xffffffff                 \
-                     label.font="Hack Nerd Font:Bold:14.0" \
+sketchybar --default label.font.family="SF Pro"            \
                      label.color=0xffffffff                \
+                     icon.color=0xffffffff                 \
                      padding_left=5                        \
                      padding_right=5                       \
                      label.padding_left=4                  \
@@ -62,15 +61,9 @@ done
 # We add some regular items to the left side of the bar
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item space_separator left                         \
-           --set space_separator icon=                            \
-                                 padding_left=10                   \
-                                 padding_right=10                  \
-                                 label.drawing=off                 \
-                                                                   \
-           --add item front_app left                               \
+sketchybar --add item front_app left                               \
            --set front_app       script="$PLUGIN_DIR/front_app.sh" \
-                                 icon.drawing=off                  \
+                                 icon=􀑋                            \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -86,7 +79,7 @@ sketchybar --add item space_separator left                         \
 
 sketchybar --add item clock right                              \
            --set clock   update_freq=10                        \
-                         icon=                                \
+                         icon=􀐫                                \
                          script="$PLUGIN_DIR/clock.sh"         \
                                                                \
            --add item volume right                             \
