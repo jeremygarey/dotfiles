@@ -2,6 +2,8 @@
 
 dotfiles for my personal macOS setup
 
+![image](./img/screenshot.png)
+
 ## sketchybar
 
 [view on GitHub](https://github.com/FelixKratz/SketchyBar)
