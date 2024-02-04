@@ -2,6 +2,8 @@
 
 dotfiles for my personal macOS setup
 
+add these folders to `~/.config/`
+
 ![image](./img/screenshot.png)
 
 ## sketchybar
