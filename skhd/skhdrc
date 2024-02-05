@@ -57,12 +57,16 @@ shift + alt - 4 : yabai -m window --space 4
 # ===== DISPLAY NAVIGATION =====
 
 # focus different display
+alt - u : yabai -m display --focus west
+alt - i : yabai -m display --focus south
+alt - o : yabai -m display --focus north
 alt - p : yabai -m display --focus east
-alt - o : yabai -m display --focus west
 
 # move window to different display
+shift + alt - u : yabai -m window --display west --focus
+shift + alt - i : yabai -m window --display south --focus
+shift + alt - o : yabai -m window --display north --focus
 shift + alt - p : yabai -m window --display east --focus
-shift + alt - o : yabai -m window --display west --focus
 
 
 # ===== FLOAT =====

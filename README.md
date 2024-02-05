@@ -77,4 +77,25 @@ skhd --stop-service
 
 **Configured Hotkeys**
 
-see [skhd/skhdrc](./skhd/skhdrc)
+Window Directions:
+
+- `h` - ⬅️
+- `j` - ⬇️
+- `k` - ⬆️
+- `l` - ➡️
+
+Display Directions:
+
+- `u` - ⬅️
+- `i` - ⬇️
+- `o` - ⬆️
+- `p` - ➡️
+
+Operations (combine with directions):
+
+- `alt` - focus
+- `shift + alt` - move
+- `shift + ctrl` - move and split
+- `ctrl + alt` - resize
+
+For all commands, see [skhd/skhdrc](./skhd/skhdrc)
