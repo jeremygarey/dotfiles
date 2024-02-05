@@ -78,6 +78,7 @@ sketchybar --add bracket spaces '/space\..*/'                            \
                                                                          \
            --add       event           spotify_change $SPOTIFY_EVENT      \
            --add item spotify.album_cover left \
+           --set      spotify.album_cover drawing=off \
            --add       item            spotify.name left                  \
            --set       spotify.name    click_script="$POPUP_SCRIPT"       \
                                        popup.horizontal=on                \
@@ -107,7 +108,8 @@ sketchybar --add bracket spaces '/space\..*/'                            \
                                        label.drawing=off                  \
                                        script="$PLUGIN_DIR/spotify.sh"    \
            --subscribe spotify.next    mouse.clicked                      \
-           --add bracket spotify_group '/spotify\..*/'                        \
+           --add bracket spotify_group '/spotify\..*/'                    \
+           --set         spotify_group drawing=off
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.

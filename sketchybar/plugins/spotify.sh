@@ -73,7 +73,6 @@ sketchybar --set spotify.album_cover \
              padding_right=0 \
              background.image.scale=0.03 \
              background.image.drawing=on \
-             background.drawing=on \
              background.color=$TRANSPARENT \
              background.image="/tmp/cover.jpg"  \
-             \
+           --set spotify_group drawing=on\
