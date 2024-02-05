@@ -150,7 +150,7 @@ sketchybar --add item clock right                              \
            --add item slack right                              \
            --set slack                                         \
                  icon=󰒱                                        \
-                 update_freq=180                               \
+                 update_freq=30                               \
                  script="$PLUGIN_DIR/slack.sh"                 \
                  icon.font.size=18                             \
                  background.padding_right=5                    \
