@@ -86,10 +86,10 @@ Window Directions:
 
 Display Directions:
 
-- `u` - ⬅️
-- `i` - ⬇️
-- `o` - ⬆️
-- `p` - ➡️
+- `y` - ⬅️
+- `u` - ⬇️
+- `i` - ⬆️
+- `o` - ➡️
 
 Operations (combine with directions):
 
