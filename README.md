@@ -15,6 +15,7 @@ add these folders to `~/.config/`
 ```
 brew tap FelixKratz/formulae
 brew install sketchybar
+brew install switchaudio-osx
 ```
 
 **Start/Restart/Stop**
@@ -86,10 +87,15 @@ Window Directions:
 
 Display Directions:
 
-- `y` - ⬅️
-- `u` - ⬇️
-- `i` - ⬆️
-- `o` - ➡️
+- `u` - ⬅️
+- `i` - ⬇️
+- `o` - ⬆️
+- `p` - ➡️
+
+Space Directions:
+
+- `n` - ⬅️
+- `m` - ➡️
 
 Operations (combine with directions):
 

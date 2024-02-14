@@ -18,10 +18,10 @@ sketchybar --bar height=42        \
                  blur_radius=0    \
                  position=top     \
                  sticky=off       \
-                 padding_left=16  \
-                 padding_right=16 \
+                 padding_left=14  \
+                 padding_right=14 \
                  color=$TRANSPARENT  \
-                 y_offset=4
+                 y_offset=3
 
 ##### Changing Defaults #####
 # We now change some default values that are applied to all further items
@@ -39,7 +39,7 @@ sketchybar --default label.font.family="SF Pro"            \
                      icon.padding_right=4                  \
                      background.drawing=on                 \
                      background.color=0x15ffffff           \
-                     background.height=36                  \
+                     background.height=32                  \
                      icon.padding_left=12                \
                      label.padding_right=12               \
                      blur_radius=30                        \
@@ -109,7 +109,7 @@ sketchybar --add bracket spaces '/space\..*/'                            \
                                        script="$PLUGIN_DIR/spotify.sh"    \
            --subscribe spotify.next    mouse.clicked                      \
            --add bracket spotify_group '/spotify\..*/'                    \
-           --set         spotify_group drawing=off
+           --set         spotify_group drawing=off                        \
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -154,8 +154,17 @@ sketchybar --add item clock right                              \
                  script="$PLUGIN_DIR/slack.sh"                 \
                  icon.font.size=18                             \
                  background.padding_right=5                    \
-                  background.padding_left=5                    \
-           --subscribe slack system_woke
+                 background.padding_left=5                    \
+           --subscribe slack system_woke                       \
+           --add item audio_output right \
+           --set audio_output update_freq=10 \
+                         script="$PLUGIN_DIR/audio_output.sh" \
+                         background.padding_right=5 \
+                         background.padding_left=5 \
+                         label.padding_left=0 \
+                         label.padding_right=0 \
+                         icon.padding_left=10 \
+                         icon.padding_right=12 \
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
