@@ -58,6 +58,19 @@ yabai --stop-service
 brew updtade yabai
 ```
 
+## JankyBorders
+
+[view on GitHub](https://github.com/FelixKratz/JankyBorders)
+
+bootstrapped with yabai
+
+**Install**¥
+
+```
+brew tap FelixKratz/formulae
+brew install borders
+```
+
 ## skhd
 
 [view on Github](https://github.com/koekeishiya/skhd)
