@@ -67,6 +67,18 @@ shift + alt - u : yabai -m window --display south --focus
 shift + alt - i : yabai -m window --display north --focus
 shift + alt - o : yabai -m window --display east --focus
 
+# stack windows
+lctrl + cmd - h : yabai -m window --stack west
+lctrl + cmd - j : yabai -m window --stack south
+lctrl + cmd - k : yabai -m window --stack north
+lctrl + cmd - l : yabai -m window --stack east
+
+# cycle through windows in stack
+lctrl + cmd - m : yabai -m window --focus stack.next
+lctrl + cmd - n : yabai -m window --focus stack.prev
+
+# to unstack windows, perform any warp operation on a stacked window
+
 
 # ===== FLOAT =====
 
@@ -95,8 +107,8 @@ lctrl + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 lctrl + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # change layout of desktop
-lctrl + alt - z : yabai -m space --layout bsp
-lctrl + alt - x : yabai -m space --layout float
+lctrl + alt - t : yabai -m space --layout bsp
+lctrl + alt - f : yabai -m space --layout float
 
 
 # ===== OTHER =====

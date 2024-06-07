@@ -4,6 +4,8 @@ ICON_PADDING_RIGHT=12
 DRAWING=false
 if [[ $STATUS_LABEL == '"StatusLabel"={ "label"=kCFNULL }' ]]; then
     DRAWING=false
+elif [[ $STATUS_LABEL == '"StatusLabel"=[ NULL ]' ]]; then
+    DRAWING=false
 elif [[ $STATUS_LABEL =~ \"label\"=\"([^\"]*)\" ]]; then
     LABEL="${BASH_REMATCH[1]}"
     if [[ $LABEL == "" ]]; then
@@ -18,7 +20,7 @@ elif [[ $STATUS_LABEL =~ \"label\"=\"([^\"]*)\" ]]; then
         exit 0
     fi
 else
-  exit 0
+  DRAWING=false
 fi
 
 sketchybar --set $NAME label="${LABEL}" icon.padding_right=${ICON_PADDING_RIGHT} drawing=$DRAWING
