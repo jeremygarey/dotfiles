@@ -28,7 +28,8 @@ sketchybar --bar height=42        \
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
-sketchybar --default label.font.family="SF Pro"            \
+# sketchybar --default label.font.family="SF Pro"            \
+sketchybar --default label.font.family="Menlo"            \
                      label.color=0xffffffff                \
                      icon.color=0xffffffff                 \
                      padding_left=10                        \
@@ -51,65 +52,75 @@ sketchybar --default label.font.family="SF Pro"            \
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+# SPACE_ICONS=("U" "I" "O" "4" "5" "6" "7" "8" "9" "10")
 
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid=$(($i+1))
-  sketchybar --add space space.$sid left                                 \
-             --set space.$sid space=$sid                                 \
-                              icon=${SPACE_ICONS[i]}                     \
-                              background.drawing=off                     \
-                              icon.padding_left=3                        \
-                              icon.padding_right=3                        \
-                              background.padding_left=8                   \
-                              background.padding_right=8                \
-                              label.drawing=off                          \
-                              script="$PLUGIN_DIR/space.sh"              \
-                              click_script="yabai -m space --focus $sid"
-done
+# for i in "${!SPACE_ICONS[@]}"
+# do
+#   sid=$(($i+1))
+#   sketchybar --add space space.$sid left                                 \
+#              --set space.$sid space=$sid                                 \
+#                               icon=${SPACE_ICONS[i]}                     \
+#                               background.drawing=off                     \
+#                               icon.padding_left=3                        \
+#                               icon.padding_right=3                        \
+#                               background.padding_left=8                   \
+#                               background.padding_right=8                \
+#                               label.drawing=off                          \
+#                               script="$PLUGIN_DIR/space.sh"              \
+#                               click_script="yabai -m space --focus $sid"
+# done
 
-sketchybar --add bracket spaces '/space\..*/'                            \
-                                                                         \
-           --add item front_app left                                    \
+# Define an event for AeroSpace workspace change
+sketchybar --add event aerospace_workspace_change
+
+# Add a single item for the active workspace
+sketchybar --add item current_space left \
+    --subscribe current_space aerospace_workspace_change \
+    --set current_space \
+          icon=􀿫 \
+          background.padding_left=5             \
+          background.padding_right=0 \
+    script="$CONFIG_DIR/plugins/aerospace.sh"
+
+sketchybar --add item front_app left                                    \
            --set front_app       script="$PLUGIN_DIR/front_app.sh"      \
                                  icon=􀑋                                 \
            --subscribe front_app front_app_switched                      \
                                                                          \
-           --add       event           spotify_change $SPOTIFY_EVENT      \
-           --add item spotify.album_cover left \
-           --set      spotify.album_cover drawing=off \
-           --add       item            spotify.name left                  \
-           --set       spotify.name    click_script="$POPUP_SCRIPT"       \
-                                       popup.horizontal=on                \
-                                       popup.align=center                 \
-                                       icon.drawing=off                   \
-                                       label.padding_left=4               \
-                                       background.drawing=off             \
-                                                                          \
-           --add       item            spotify.back popup.spotify.name    \
-           --set       spotify.back    icon=􀊎                             \
-                                       icon.padding_right=14               \
-                                       script="$PLUGIN_DIR/spotify.sh"    \
-                                       label.drawing=off                  \
-           --subscribe spotify.back    mouse.clicked                      \
-                                                                          \
-           --add       item            spotify.play popup.spotify.name    \
-           --set       spotify.play    icon=􀊔                             \
-                                       icon.padding_right=14               \
-                                       updates=on                         \
-                                       label.drawing=off                  \
-                                       script="$PLUGIN_DIR/spotify.sh"    \
-           --subscribe spotify.play    mouse.clicked spotify_change       \
-                                                                          \
-           --add       item            spotify.next popup.spotify.name    \
-           --set       spotify.next    icon=􀊐                             \
-                                       icon.padding_right=14               \
-                                       label.drawing=off                  \
-                                       script="$PLUGIN_DIR/spotify.sh"    \
-           --subscribe spotify.next    mouse.clicked                      \
-           --add bracket spotify_group '/spotify\..*/'                    \
-           --set         spotify_group drawing=off                        \
+      #      --add       event           spotify_change $SPOTIFY_EVENT      \
+      #      --add item spotify.album_cover left \
+      #      --set      spotify.album_cover drawing=off \
+      #      --add       item            spotify.name left                  \
+      #      --set       spotify.name    click_script="$POPUP_SCRIPT"       \
+      #                                  popup.horizontal=on                \
+      #                                  popup.align=center                 \
+      #                                  icon.drawing=off                   \
+      #                                  label.padding_left=4               \
+      #                                  background.drawing=off             \
+      #                                                                     \
+      #      --add       item            spotify.back popup.spotify.name    \
+      #      --set       spotify.back    icon=􀊎                             \
+      #                                  icon.padding_right=14               \
+      #                                  script="$PLUGIN_DIR/spotify.sh"    \
+      #                                  label.drawing=off                  \
+      #      --subscribe spotify.back    mouse.clicked                      \
+      #                                                                     \
+      #      --add       item            spotify.play popup.spotify.name    \
+      #      --set       spotify.play    icon=􀊔                             \
+      #                                  icon.padding_right=14               \
+      #                                  updates=on                         \
+      #                                  label.drawing=off                  \
+      #                                  script="$PLUGIN_DIR/spotify.sh"    \
+      #      --subscribe spotify.play    mouse.clicked spotify_change       \
+      #                                                                     \
+      #      --add       item            spotify.next popup.spotify.name    \
+      #      --set       spotify.next    icon=􀊐                             \
+      #                                  icon.padding_right=14               \
+      #                                  label.drawing=off                  \
+      #                                  script="$PLUGIN_DIR/spotify.sh"    \
+      #      --subscribe spotify.next    mouse.clicked                      \
+      #      --add bracket spotify_group '/spotify\..*/'                    \
+      #      --set         spotify_group drawing=off                        \
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
