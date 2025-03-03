@@ -34,41 +34,14 @@ For verbose output:
 sketchybar
 ```
 
-## yabai
+## aerospace
 
-[view on GitHub](https://github.com/koekeishiya/yabai)
+[view on GitHub](https://github.com/nikitabobko/AeroSpace)
 
 **Install**
 
 ```
-brew install koekeishiya/formulae/yabai
-```
-
-**Start/Restart/Stop**
-
-```
-yabai --start-service
-yabai --restart-service
-yabai --stop-service
-```
-
-**Update to latest**
-
-```
-brew updtade yabai
-```
-
-## JankyBorders
-
-[view on GitHub](https://github.com/FelixKratz/JankyBorders)
-
-bootstrapped with yabai
-
-**Install**¥
-
-```
-brew tap FelixKratz/formulae
-brew install borders
+brew install --cask nikitabobko/tap/aerospace
 ```
 
 ## skhd
@@ -118,3 +91,40 @@ Operations (combine with directions):
 - `ctrl + alt` - resize
 
 For all commands, see [skhd/skhdrc](./skhd/skhdrc)
+
+## yabai (replaced by aerospace)
+
+[view on GitHub](https://github.com/koekeishiya/yabai)
+
+**Install**
+
+```
+brew install koekeishiya/formulae/yabai
+```
+
+**Start/Restart/Stop**
+
+```
+yabai --start-service
+yabai --restart-service
+yabai --stop-service
+```
+
+**Update to latest**
+
+```
+brew updtade yabai
+```
+
+## JankyBorders (for use with yabai)
+
+[view on GitHub](https://github.com/FelixKratz/JankyBorders)
+
+bootstrapped with yabai
+
+**Install**¥
+
+```
+brew tap FelixKratz/formulae
+brew install borders
+```
