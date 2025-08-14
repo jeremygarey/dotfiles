@@ -170,7 +170,7 @@ sketchybar --add item clock right                              \
            --add item mail right                              \
            --set mail                                         \
                  icon=􀍖                                        \
-                 update_freq=30                                \
+                 update_freq=15                                \
                  script="$PLUGIN_DIR/mail.sh"                 \
                  icon.font.size=14                             \
                  background.padding_right=5                    \
