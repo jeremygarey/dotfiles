@@ -4,10 +4,19 @@ return {
     opts = {
       picker = {
         hidden = true, -- for hidden files
-        ignored = true, -- for .gitignore files
+        ignored = false, -- for .gitignore files
         sources = {
           files = {
             hidden = true,
+            ignored = false,
+          },
+        },
+      },
+      grep = {
+        sources = {
+          files = {
+            hidden = true,
+            ignored = false,
           },
         },
       },
