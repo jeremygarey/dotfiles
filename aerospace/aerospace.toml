@@ -226,3 +226,36 @@ shift-down = ['volume set 0', 'mode main']
 U = 1
 I = 2
 O = 3
+
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace I'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace U'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace U'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['layout floating', 'move-node-to-workspace P']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = ['layout floating', 'move-node-to-workspace P']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.findmy'
+run = ['layout floating', 'move-node-to-workspace P']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.electron.dockerdesktop'
+run = 'layout floating'
