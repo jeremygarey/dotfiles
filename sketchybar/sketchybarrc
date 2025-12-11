@@ -161,7 +161,7 @@ sketchybar --add item clock right                              \
            --add item slack right                              \
            --set slack                                         \
                  icon=󰒱                                        \
-                 update_freq=10                                \
+                 update_freq=5                                \
                  script="$PLUGIN_DIR/slack.sh"                 \
                  icon.font.size=18                             \
                  background.padding_right=5                    \
@@ -170,7 +170,7 @@ sketchybar --add item clock right                              \
            --add item mail right                              \
            --set mail                                         \
                  icon=􀍖                                        \
-                 update_freq=15                                \
+                 update_freq=5
                  script="$PLUGIN_DIR/mail.sh"                 \
                  icon.font.size=14                             \
                  background.padding_right=5                    \
